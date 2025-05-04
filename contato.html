@@ -69,6 +69,21 @@
                     Para contatos profissionais, também é possível procurá-lo no Discord.
                 </p>
             </div>
+            <div class="contato-social-icons">
+                <a href="https://www.youtube.com/@SpockyGames" target="_blank" rel="noopener" class="icon-flip" tabindex="0" aria-label="YouTube">
+                    <img src="/assets/images/icons/default/youtube_default.png" alt="YouTube" class="icon-front" draggable="false">
+                    <img src="/assets/images/icons/hover/hover_youtube.png" alt="YouTube Hover" class="icon-back" draggable="false">
+                </a>
+                <a href="https://discord.com/invite/5Zags8Xaz5" target="_blank" rel="noopener" class="icon-flip" tabindex="0" aria-label="Discord">
+                    <img src="/assets/images/icons/default/discord_default.png" alt="Discord" class="icon-front" draggable="false">
+                    <img src="/assets/images/icons/hover/hover_discord.png" alt="Discord Hover" class="icon-back" draggable="false">
+                </a>
+                <a href="https://instagram.com/SpockyGames" target="_blank" rel="noopener" class="icon-flip" tabindex="0" aria-label="Discord">
+                    <img src="/assets/images/icons/default/instagram_default.png" alt="Discord" class="icon-front" draggable="false">
+                    <img src="/assets/images/icons/hover/hover_insta.png" alt="Discord Hover" class="icon-back" draggable="false">
+                </a>
+                <!-- Adicione mais blocos conforme as redes disponíveis -->
+            </div>
         </section>
     </main>
     <!-- Footer -->
@@ -97,6 +112,30 @@
             prevScrollpos = currentScrollPos;
         });
     </script>
+    <script>
+        document.querySelectorAll('.icon-flip').forEach(function(icon) {
+          // Flip on hover (desktop)
+          icon.addEventListener('mouseenter', function() {
+            icon.classList.add('flipped');
+          });
+          icon.addEventListener('mouseleave', function() {
+            icon.classList.remove('flipped');
+          });
+          // Flip on touch/click (mobile)
+          icon.addEventListener('touchstart', function(e) {
+            icon.classList.toggle('flipped');
+            // Evita duplo toque em mobile
+            e.preventDefault();
+          }, {passive: false});
+          // Flip on keyboard focus (acessibilidade)
+          icon.addEventListener('focus', function() {
+            icon.classList.add('flipped');
+          });
+          icon.addEventListener('blur', function() {
+            icon.classList.remove('flipped');
+          });
+        });
+        </script>
     <script>
         function toggleMenu() {
           const navUl = document.querySelector('nav ul');
