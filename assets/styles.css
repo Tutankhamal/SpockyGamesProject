@@ -396,6 +396,9 @@ footer p {
   gap: 2em;
   justify-content: center;
   flex-wrap: wrap;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 auto;
 }
 
 .produto-card {
@@ -435,11 +438,12 @@ footer p {
 }
 
 @media (max-width: 900px) {
-  .loja-box {
-    padding: 1.5em 0.5em;
-  }
   .produtos-grid {
     gap: 1em;
+    padding-left: 5%;
+    padding-right: 5%;
+    width: 100%;
+    box-sizing: border-box;
   }
   .produto-card {
     width: 90vw;
@@ -448,12 +452,18 @@ footer p {
 }
 
 @media (max-width: 600px) {
-  .loja-title {
-    font-size: 2em;
-  }
   .produtos-grid {
     flex-direction: column;
     align-items: center;
+    padding-left: 5%;
+    padding-right: 5%;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .produto-card {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 }
 /* Live Page Styles */
@@ -717,15 +727,42 @@ html {
   }
 }
 
+.loja-box,
+.live-box,
+.sobre-box,
+.contato-box,
+.institucional-box {
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 90vw;
+  padding: 2.5em 2em;
+  background: rgba(0,0,0,0.85);
+  border-radius: 18px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.2);
+  box-sizing: border-box;
+}
+
+@media (max-width: 1200px) {
+  .loja-box,
+  .live-box,
+  .sobre-box,
+  .contato-box,
+  .institucional-box {
+    margin-left: 5vw;
+    margin-right: 5vw;
+    width: 90vw;
+  }
+}
+
 @media (max-width: 600px) {
   .loja-box,
   .live-box,
   .sobre-box,
   .contato-box,
   .institucional-box {
-    margin-left: 5%;
-    margin-right: 5%;
-    width: 90%;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    width: 90vw;
     padding: 1.2em 0.5em;
   }
 }
