@@ -716,3 +716,16 @@ html {
     max-height: 56px;
   }
 }
+
+@media (max-width: 600px) {
+  .loja-box,
+  .live-box,
+  .sobre-box,
+  .contato-box,
+  .institucional-box {
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
+    padding: 1.2em 0.5em;
+  }
+}
