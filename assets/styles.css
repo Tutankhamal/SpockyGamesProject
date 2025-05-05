@@ -766,3 +766,13 @@ html {
     padding: 1.2em 0.5em;
   }
 }
+
+@media (max-width: 600px) {
+  .hero-logo {
+    width: 80vw;
+    max-width: 100%;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    display: block;
+  }
+}
