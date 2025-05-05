@@ -89,11 +89,43 @@ nav ul li a,
 .navselect {
   font-weight: bold;
   font-size: large;
-  border: 2px solid #39c01b;
+  border: 2px solid transparent;
   border-radius: 6px;
   padding: 4px 12px;
   color: #fff;
   background: transparent;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.navselect::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: 6px;
+  padding: 2px;
+  background: linear-gradient(
+    90deg,
+    #bf1b3b,
+    #c6c31b,
+    #3bc91c,
+    #1eb5c2,
+    #1e21c2,
+    #8f1dc3
+  );
+  background-size: 300% 100%;
+  animation: rainbow-border-alternate 12s ease-in-out infinite;
+  filter: drop-shadow(0 0 8px #bf1b3b)
+          drop-shadow(0 0 12px #c6c31b)
+          drop-shadow(0 0 16px #1eb5c2);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
 }
 
 .hamburger {
@@ -199,6 +231,23 @@ nav ul li a,
   width: 400px;
   height: auto;
   margin: 10px 0 20px;
+  transition: transform 0.3s;
+}
+
+/* Efeito bounce apenas no hover/focus */
+.hero-logo-wrapper:hover .hero-logo,
+.hero-logo-wrapper:focus-within .hero-logo {
+  animation: hero-bounce 0.9s cubic-bezier(.28,.84,.42,1.2);
+}
+
+@keyframes hero-bounce {
+  0%   { transform: translateY(0); }
+  20%  { transform: translateY(-28px); }
+  40%  { transform: translateY(0); }
+  55%  { transform: translateY(-14px); }
+  70%  { transform: translateY(0); }
+  80%  { transform: translateY(-7px); }
+  100% { transform: translateY(0); }
 }
 
 .hero-content {
@@ -774,5 +823,151 @@ html {
     margin-left: 10vw;
     margin-right: 10vw;
     display: block;
+  }
+}
+
+/* Footer Social Icons */
+.footer-social-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1em;
+  margin: 1em 0 0 0;
+}
+
+.footer-icon-flip {
+  width: 32px;
+  height: 32px;
+  perspective: 300px;
+  cursor: pointer;
+  position: relative;
+  outline: none;
+  border: none;
+  background: transparent;
+  box-sizing: border-box;
+  aspect-ratio: 1 / 1;
+  min-width: 28px;
+  min-height: 28px;
+  max-width: 40px;
+  max-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-icon-flip img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0; left: 0;
+  transition: transform 0.5s, border 0.3s;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.18);
+  user-select: none;
+  pointer-events: none;
+  border: 1.5px solid transparent;
+}
+
+.footer-icon-flip .icon-front {
+  transform: rotateY(0deg);
+  z-index: 2;
+  border-color: #f7f422;
+}
+
+.footer-icon-flip .icon-back {
+  transform: rotateY(180deg);
+  z-index: 1;
+  border-color: transparent;
+}
+
+.footer-icon-flip.flipped .icon-front {
+  transform: rotateY(-180deg);
+}
+
+.footer-icon-flip.flipped .icon-back {
+  transform: rotateY(0deg);
+}
+
+@media (max-width: 600px) {
+  .footer-icon-flip {
+    width: 24px;
+    height: 24px;
+    min-width: 20px;
+    min-height: 20px;
+    max-width: 32px;
+    max-height: 32px;
+  }
+}
+
+.footer-social-icons .icon-flip {
+  width: 32px;
+  height: 32px;
+  min-width: 24px;
+  min-height: 24px;
+  max-width: 40px;
+  max-height: 40px;
+}
+
+@media (max-width: 600px) {
+  .footer-social-icons .icon-flip {
+    width: 24px;
+    height: 24px;
+    min-width: 18px;
+    min-height: 18px;
+    max-width: 32px;
+    max-height: 32px;
+  }
+}
+
+.btn1,
+.btn2 {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  background-clip: padding-box;
+  border: 2px solid transparent !important;
+}
+
+.btn1::before,
+.btn2::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(
+    90deg,
+    #ff0055,
+    #fffa00,
+    #39ff14,
+    #00cfff,
+    #a259ff,
+    #ff0055
+  );
+  background-size: 300% 100%;
+  animation: rainbow-border-alternate 12s ease-in-out infinite;
+  filter: drop-shadow(0 0 8px #ff0055)
+          drop-shadow(0 0 12px #fffa00)
+          drop-shadow(0 0 16px #00cfff);
+  /* O glow acompanha o gradiente, pois é aplicado no mesmo elemento animado */
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+@keyframes rainbow-border-alternate {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }

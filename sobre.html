@@ -74,9 +74,25 @@
     <!-- Footer -->
     <footer>
         <p>&copy; 2025 Spocky Games. Todos os direitos reservados.</p>
-        <div class="social">
-            <a href="https://www.youtube.com/@SpockyGames" target="_blank" aria-label="YouTube">YouTube</a> | 
-            <a href="https://discord.com/invite/5Zags8Xaz5" target="_blank" aria-label="Discord">Discord</a>
+        
+        <div class="contato-social-icons footer-social-icons">
+            <a href="https://www.youtube.com/@SpockyGames" target="_blank" rel="noopener" class="icon-flip" tabindex="0" aria-label="YouTube">
+                <img src="/assets/images/icons/default/youtube_default.png" alt="YouTube" class="icon-front" draggable="false">
+                <img src="/assets/images/icons/hover/hover_youtube.png" alt="YouTube Hover" class="icon-back" draggable="false">
+            </a>
+            <a href="https://discord.com/invite/5Zags8Xaz5" target="_blank" rel="noopener" class="icon-flip" tabindex="0" aria-label="Discord">
+                <img src="/assets/images/icons/default/discord_default.png" alt="Discord" class="icon-front" draggable="false">
+                <img src="/assets/images/icons/hover/hover_discord.png" alt="Discord Hover" class="icon-back" draggable="false">
+            </a>
+            <a href="https://instagram.com/SpockyGames" target="_blank" rel="noopener" class="icon-flip" tabindex="0" aria-label="Instagram">
+                <img src="/assets/images/icons/default/instagram_default.png" alt="Instagram" class="icon-front" draggable="false">
+                <img src="/assets/images/icons/hover/hover_insta.png" alt="Instagram Hover" class="icon-back" draggable="false">
+            </a>
+            <a href="https://facebook.com/SpockyGames" target="_blank" rel="noopener" class="icon-flip" tabindex="0" aria-label="Facebook">
+                <img src="/assets/images/icons/default/facebook_default.png" alt="Facebook" class="icon-front" draggable="false">
+                <img src="/assets/images/icons/hover/hover_facebook.png" alt="Facebook Hover" class="icon-back" draggable="false">
+            </a>
+            <!-- Adicione mais blocos conforme as redes disponíveis -->
         </div>
     </footer>
 
@@ -109,5 +125,25 @@
           navUl.classList.toggle('active');
         }
         </script>
+                <script>
+                    document.querySelectorAll('.icon-flip').forEach(function(icon) {
+                      icon.addEventListener('mouseenter', function() {
+                        icon.classList.add('flipped');
+                      });
+                      icon.addEventListener('mouseleave', function() {
+                        icon.classList.remove('flipped');
+                      });
+                      icon.addEventListener('touchstart', function(e) {
+                        icon.classList.toggle('flipped');
+                        e.preventDefault();
+                      }, {passive: false});
+                      icon.addEventListener('focus', function() {
+                        icon.classList.add('flipped');
+                      });
+                      icon.addEventListener('blur', function() {
+                        icon.classList.remove('flipped');
+                      });
+                    });
+                </script>
 </body>
 </html>
