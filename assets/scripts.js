@@ -54,3 +54,14 @@ document.querySelectorAll('.icon-flip').forEach(function(icon) {
       navUl.classList.remove('open');
     });
   });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var wrapper = document.querySelector('.hero-logo-wrapper');
+    if (!wrapper) return;
+    wrapper.addEventListener('mousedown', function() {
+      wrapper.blur && wrapper.blur();
+    });
+    wrapper.addEventListener('touchstart', function() {
+      wrapper.blur && wrapper.blur();
+    });
+  });

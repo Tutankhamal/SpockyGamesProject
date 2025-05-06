@@ -1,13 +1,18 @@
 /* General Styles */
 body {
   font-family: 'Open Sans', sans-serif;
-  background: url('/assets/images/bg-site.jpg') center/cover fixed no-repeat;
+  background: #000; /* Fundo preto sólido */
+  background-image: url('/assets/images/bg-site.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   color: #fff;
+  overscroll-behavior: none; /* Evita bounce/scroll extra em mobile */
 }
-
 .header {
   position: fixed;
   top: 0;
@@ -235,6 +240,12 @@ nav ul li a,
   height: auto;
   margin: 10px 0 20px;
   transition: transform 0.3s;
+  pointer-events: none; /* Impede qualquer clique/touch na imagem */
+}
+
+.hero-logo-wrapper {
+  /* Não use tabindex se não precisar de foco por acessibilidade */
+  outline: none;
 }
 
 /* Efeito bounce apenas no hover/focus */
@@ -582,6 +593,16 @@ footer p {
 html {
   scrollbar-color: #0a0a0a rgba(0,0,0,0.7);
   scrollbar-width: thin;
+}
+
+html {
+  background: #000;
+  background-image: url('/assets/images/bg-site.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  overscroll-behavior: none;
 }
 
 .live-title {
