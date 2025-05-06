@@ -1,8 +1,7 @@
 // ========== Spocky Games - scripts.js ==========
-// Este arquivo centraliza os scripts JS do seu site.
-// Adicione novos scripts aqui para manter o código organizado.
 
-// Navbar: Efeito flip para ícones sociais (contato e footer)
+
+// Navbar: flip
 document.querySelectorAll('.icon-flip').forEach(function(icon) {
     icon.addEventListener('mouseenter', function() {
       icon.classList.add('flipped');
@@ -22,13 +21,13 @@ document.querySelectorAll('.icon-flip').forEach(function(icon) {
     });
   });
   
-  // Navbar: Exemplo de menu hambúrguer (adicione sua lógica se necessário)
+  // Navbar: Hambúrguer
   function toggleMenu() {
     const nav = document.querySelector('nav ul');
     nav.classList.toggle('open');
   }
   
-  // Header: Ocultar ao rolar para baixo (opcional, remova se não usar)
+  // Header
   const header = document.querySelector('.header');
   if (header) {
     let prevScrollpos = window.pageYOffset;
@@ -43,14 +42,12 @@ document.querySelectorAll('.icon-flip').forEach(function(icon) {
     });
   }
   
-  // Adicione outros scripts personalizados abaixo conforme necessário
-
+  // Navbar: Hambúrguer Abrir e Fechar 
   function toggleMenu() {
     const navUl = document.querySelector('nav ul');
     navUl.classList.toggle('open');
   }
   
-  // Opcional: Fechar menu ao clicar em um link (mobile UX)
   document.querySelectorAll('nav ul li a').forEach(link => {
     link.addEventListener('click', () => {
       const navUl = document.querySelector('nav ul');
