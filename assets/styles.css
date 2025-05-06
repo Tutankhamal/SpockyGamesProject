@@ -1171,7 +1171,26 @@ html {
     transform: scale(1.07);
     animation: border-glow-pulse 1.2s infinite alternate;
   }
+  /* Também ativa o efeito ao tocar/clicar no mobile */
+  .console-img:active,
+  .console-info:active {
+    border-color: #a421df;
+    box-shadow: 0 0 10px 2px #a421df55, 0 2px 8px rgba(0,0,0,0.10);
+    filter: brightness(1.10);
+    transform: scale(1.07);
+    animation: border-glow-pulse 1.2s infinite alternate;
+  }
 }
+
+@media (max-width: 700px) {
+  .console-info {
+    max-width: 100%;
+    order: 2;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
 
 @media (max-width: 700px) {
   .console-info {
