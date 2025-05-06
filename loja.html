@@ -108,55 +108,6 @@
             <!-- Adicione mais blocos conforme as redes disponíveis -->
         </div>
     </footer>
-
-    <!-- Scripts -->
-    <script>
-        const header = document.querySelector('.header');
-        let prevScrollpos = window.pageYOffset;
-
-        window.addEventListener('scroll', function() {
-            const currentScrollPos = window.pageYOffset;
-            if (prevScrollpos > currentScrollPos) {
-                // Rolando para cima: mostra a navbar em qualquer posição
-                header.classList.remove('hide');
-            } else {
-                // Rolando para baixo: esconde a navbar
-                header.classList.add('hide');
-            }
-            prevScrollpos = currentScrollPos;
-        });
-    </script>
-    <script>
-        function toggleMenu() {
-          const navUl = document.querySelector('nav ul');
-          navUl.classList.toggle('active');
-        }
-    </script>
-    <script>
-        function toggleMenu() {
-          const navUl = document.querySelector('nav ul');
-          navUl.classList.toggle('active');
-        }
-        </script>
-                <script>
-                    document.querySelectorAll('.icon-flip').forEach(function(icon) {
-                      icon.addEventListener('mouseenter', function() {
-                        icon.classList.add('flipped');
-                      });
-                      icon.addEventListener('mouseleave', function() {
-                        icon.classList.remove('flipped');
-                      });
-                      icon.addEventListener('touchstart', function(e) {
-                        icon.classList.toggle('flipped');
-                        e.preventDefault();
-                      }, {passive: false});
-                      icon.addEventListener('focus', function() {
-                        icon.classList.add('flipped');
-                      });
-                      icon.addEventListener('blur', function() {
-                        icon.classList.remove('flipped');
-                      });
-                    });
-                </script>
+    <script src="assets/scripts.js"></script>
 </body>
 </html>
