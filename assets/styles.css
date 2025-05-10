@@ -1221,3 +1221,427 @@ html {
     margin-right: 10px;
   }
 }
+
+/* Box da timeline igual à institucional */
+.timeline-section {
+  margin: 3em auto 2em auto;
+  max-width: 1100px;
+  padding: 0 1em;
+}
+.timeline-box {
+  background: rgba(24,24,40,0.98);
+  border-radius: 18px;
+  box-shadow: 0 8px 32px #000a;
+  padding: 2em 1.5em 2em 1.5em;
+  margin: 0 auto 2em auto;
+  max-width: 1100px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media (max-width: 900px) {
+  .timeline-box {
+    padding: 1.5em 1em;
+    max-width: 100vw;
+    width: 98vw;
+  }
+}
+@media (max-width: 600px) {
+  .timeline-box {
+    padding: 1em 0.5em 1em 0.5em;
+  }
+}
+
+/* Timeline base */
+.timeline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  margin: 2em 0 3em 0;
+  min-height: 80px;
+  width: 100%;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; top: 50%;
+  height: 4px;
+  background: linear-gradient(90deg, #222 60%, #a421df 100%);
+  z-index: 0;
+  transform: translateY(-50%);
+}
+.timeline-point {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  min-width: 70px;
+}
+.timeline-dot {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #a421df;
+  box-shadow: 0 0 0 0 #a421df88;
+  border: 4px solid #fff;
+  animation: pulse 1.6s infinite alternate;
+  transition: box-shadow 0.3s, background 0.3s;
+}
+.timeline-point:hover .timeline-dot,
+.timeline-point:focus .timeline-dot {
+  background: #fff;
+  box-shadow: 0 0 16px 8px #a421dfcc, 0 0 0 0 #fff;
+  animation: pulse-hover 0.7s infinite alternate;
+}
+.timeline-label {
+  margin-top: 0.5em;
+  color: #fff;
+  font-size: 1em;
+  font-weight: 600;
+  text-shadow: 0 1px 4px #000;
+  user-select: none;
+}
+
+/* Timeline vertical (mobile) */
+@media (max-width: 800px) {
+  .timeline {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    min-height: 350px;
+    min-width: 0;
+    height: 100%;
+  }
+  .timeline::before {
+    left: 14px; right: auto; top: 0; bottom: 0;
+    width: 4px; height: 100%;
+    background: linear-gradient(180deg, #222 60%, #a421df 100%);
+    transform: none;
+  }
+  .timeline-point {
+    flex-direction: row;
+    align-items: center;
+    margin: 1.2em 0;
+    min-width: 0;
+  }
+  .timeline-dot {
+    margin-right: 1em;
+  }
+  .timeline-label {
+    margin-top: 0;
+    margin-left: 0.5em;
+  }
+}
+
+/* Pulsar */
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 #a421df88; }
+  100% { box-shadow: 0 0 16px 8px #a421df44; }
+}
+@keyframes pulse-hover {
+  0% { box-shadow: 0 0 0 0 #a421dfcc; }
+  100% { box-shadow: 0 0 24px 12px #a421dfcc; }
+}
+
+/* Modal base */
+.modal-bg {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0; top: 0; width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.75);
+  align-items: center;
+  justify-content: center;
+}
+.modal-bg.active { display: flex; }
+.modal {
+  background: #181828;
+  color: #fff;
+  border-radius: 16px;
+  max-width: 600px;
+  width: 95vw;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 2em 1.5em 1.5em 1.5em;
+  position: relative;
+  box-shadow: 0 8px 32px #000a;
+  animation: modalIn 0.3s;
+}
+.modal.small {
+  max-width: 400px;
+  padding: 1.5em 1em 1em 1em;
+}
+@keyframes modalIn {
+  from { transform: scale(0.85); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+.modal-close {
+  position: absolute;
+  top: 12px; right: 18px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2em;
+  cursor: pointer;
+  z-index: 2;
+  transition: color 0.2s;
+}
+.modal-close:hover { color: #a421df; }
+.modal-content {
+  margin-top: 1em;
+}
+.generation-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  color: #a421df;
+}
+.generation-period {
+  font-size: 1em;
+  color: #aaa;
+  margin-bottom: 1em;
+}
+.generation-consoles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2em;
+  justify-content: flex-start;
+  margin-top: 1.5em;
+}
+.console-thumb {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  width: 110px;
+  margin-bottom: 1em;
+  transition: transform 0.2s;
+}
+.console-thumb:hover {
+  transform: scale(1.07);
+}
+.console-thumb-img {
+  width: 80px;
+  height: 60px;
+  object-fit: contain;
+  background: #222;
+  border-radius: 8px;
+  margin-bottom: 0.5em;
+  border: 2px solid #a421df44;
+}
+.console-thumb-name {
+  font-size: 0.98em;
+  color: #fff;
+  text-align: center;
+  margin-top: 0.2em;
+}
+
+/* Modal do console */
+.console-modal-img {
+  width: 100%;
+  max-width: 220px;
+  display: block;
+  margin: 0 auto 1em auto;
+  border-radius: 10px;
+  background: #222;
+  border: 2px solid #a421df44;
+}
+.console-modal-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  color: #a421df;
+  text-align: center;
+}
+.console-modal-table {
+  width: 100%;
+  margin: 1em 0;
+  border-collapse: collapse;
+  font-size: 0.98em;
+}
+.console-modal-table th,
+.console-modal-table td {
+  padding: 0.3em 0.7em;
+  border-bottom: 1px solid #333;
+  text-align: left;
+}
+.console-modal-curiosities {
+  margin-top: 0.7em;
+  color: #fff;
+  font-size: 1em;
+}
+@media (max-width: 600px) {
+  .generation-consoles {
+    justify-content: center;
+  }
+  .modal {
+    padding: 1em 0.5em 0.5em 0.5em;
+  }
+}
+
+/* Box institucional e timeline: preto transparente */
+.institucional-box {
+  background: rgba(0,0,0,0.85); /* preto transparente */
+  border-radius: 18px;
+  box-shadow: 0 8px 32px #000a;
+  padding: 2em 1.5em 2em 1.5em;
+  margin: 0 auto 2em auto;
+  max-width: 1100px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2em;
+}
+
+/* Timeline só muda o layout interno */
+.timeline-box {
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+/* Responsividade igual para ambas */
+@media (max-width: 900px) {
+  .institucional-box, .timeline-box {
+    padding: 1.5em 1em;
+    max-width: 100vw;
+    width: 98vw;
+    flex-direction: column;
+    gap: 1em;
+  }
+}
+/* Box institucional e timeline: preto transparente */
+.institucional-box {
+  background: rgba(0,0,0,0.85); /* preto transparente */
+  border-radius: 18px;
+  box-shadow: 0 8px 32px #000a;
+  padding: 2em 1.5em 2em 1.5em;
+  margin: 0 auto 2em auto;
+  max-width: 1100px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2em;
+}
+
+/* Timeline só muda o layout interno */
+.timeline-box {
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+/* Responsividade igual para ambas */
+@media (max-width: 900px) {
+  .institucional-box, .timeline-box {
+    padding: 1.5em 1em;
+    max-width: 100vw;
+    width: 98vw;
+    flex-direction: column;
+    gap: 1em;
+  }
+}
+@media (max-width: 600px) {
+  .institucional-box, .timeline-box {
+    padding: 1em 0.5em 1em 0.5em;
+  }
+}
+
+@media (max-width: 600px) {
+  .institucional-box,
+  .timeline-box {
+    padding: 1em 0.5em 1em 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    width: 95vw;
+    box-sizing: border-box;
+  }
+}
+
+/* Timeline base */
+.timeline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  margin: 2em 0 3em 0;
+  min-height: 80px;
+  width: 100%;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(50% - 14px + 14px); /* 14px é metade do .timeline-dot (28px) */
+  height: 4px;
+  background: linear-gradient(90deg, #222 60%, #a421df 100%);
+  z-index: 0;
+  /* Remova transform para evitar deslocamento duplo */
+}
+
+/* Timeline vertical (mobile) */
+@media (max-width: 800px) {
+  .timeline {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    min-height: 350px;
+    min-width: 0;
+    height: 100%;
+  }
+  .timeline::before {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    height: 100%;
+    margin-left: 14px; /* 14px é metade do .timeline-dot (28px) */
+    background: linear-gradient(180deg, #222 60%, #a421df 100%);
+    transform: none;
+  }
+  .timeline-point {
+    flex-direction: row;
+    align-items: center;
+    margin: 1.2em 0;
+    min-width: 0;
+  }
+  .timeline-dot {
+    margin-right: 1em;
+  }
+  .timeline-label {
+    margin-top: 0;
+    margin-left: 0.5em;
+  }
+}
+
+.modal-bg {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0; top: 0; width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.75);
+  align-items: center;
+  justify-content: center;
+}
+.modal-bg.active { display: flex; }
+.modal {
+  background: #181828;
+  color: #fff;
+  border-radius: 16px;
+  max-width: 600px;
+  width: 95vw;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 2em 1.5em 1.5em 1.5em;
+  position: relative;
+  box-shadow: 0 8px 32px #000a;
+  animation: modalIn 0.3s;
+}
