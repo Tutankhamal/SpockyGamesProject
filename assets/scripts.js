@@ -438,7 +438,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         {
           name: "Microsoft Xbox Series X",
-          img: "/assets/images/consoles/xboxseriesx.png",
+          img: "/assets/images/consoles/xboxsseriesx.png",
           ficha: [
             ["Lançamento", "2020"],
             ["CPU", "AMD Zen 2, 8 núcleos"],
@@ -627,3 +627,4 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+
