@@ -1406,12 +1406,25 @@ html {
   margin-bottom: 1em;
 }
 .generation-consoles {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.2em;
-  justify-content: flex-start;
-  margin-top: 1.5em;
+  display: grid;
+  gap: 1em;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;    /* Centraliza o conteúdo de cada célula */
+  justify-content: center;  /* Centraliza o grid dentro do container */
 }
+/* Em telas menores, ajustamos para 2 itens por linha */
+@media (max-width: 768px) {
+  .generation-consoles {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+/* Em telas muito pequenas, 1 item por linha */
+@media (max-width: 480px) {
+  .generation-consoles {
+    grid-template-columns: 1fr;
+  }
+}
+
 .console-thumb {
   display: flex;
   flex-direction: column;
