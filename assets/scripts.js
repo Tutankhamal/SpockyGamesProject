@@ -452,8 +452,8 @@ document.addEventListener('DOMContentLoaded', function () {
       ]
     },
     {
-      gen: "pc",
-      title: "Computadores/PC",
+      gen: "10",
+      title: "10ª Geração",
       period: "Sempre evoluindo",
       consoles: [
         {

@@ -1604,7 +1604,7 @@ html {
     width: 4px;
     height: 100%;
     margin-left: 14px; /* 14px é metade do .timeline-dot (28px) */
-    background: linear-gradient(180deg, #22222200 60%, #a321df00 100%);
+    background: linear-gradient(180deg, #a321df 60%, #a321df 100%);
     transform: none;
   }
   .timeline-point {
@@ -1691,24 +1691,25 @@ html {
     color: white; /* Cor do texto dos círculos */
 }
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.8);
-align-items: center; /* Centraliza verticalmente */
-    justify-content: center; /* Centraliza horizontalmente */
-    display: flex; /* Usar flexbox para centralização */
+  background: #0000009d;
+  color: #fff;
+  border-radius: 16px;
+  max-width: 600px;
+  width: 95vw;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 2em 1.5em 1.5em 1.5em;
+  position: relative;
+  box-shadow: 0 8px 32px #000a;
+  animation: modalIn 0.3s;
+  margin: 0 auto; /* Adiciona margem automática para centralizar */
+  align-items: center;
 }
 .modal-content {
     background-color: #0000009d;
     margin: 15px; /* Margem para dispositivos móveis */
     padding: 20px;
-    border: 1px solid #ba1ce2;
+    border: 3px solid #ba1ce2;
     width: 90%; /* Largura responsiva */
     max-width: 600px; /* Largura máxima */
     color: white;
@@ -1735,3 +1736,254 @@ align-items: center; /* Centraliza verticalmente */
     }
 }
 
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Timeline base */
+.timeline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  margin: 2em 0 3em 0;
+  min-height: 100px; /* Aumentado para dar mais espaço vertical */
+  width: 100%;
+}
+
+.timeline-point {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  min-width: 70px;
+  margin: 0 10px; /* Adicionado espaçamento horizontal entre os pontos */
+}
+
+.timeline-dot {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #a421df;
+  box-shadow: 0 0 0 0 #a421df88;
+  border: 4px solid #fff;
+  animation: pulse 1.6s infinite alternate;
+  transition: box-shadow 0.3s, background 0.3s;
+  margin-bottom: 15px; /* Aumentado o espaçamento entre o círculo e a legenda */
+}
+
+.timeline-label {
+  margin-top: 10px; /* Aumentado o espaçamento acima da legenda */
+  color: #fff;
+  font-size: 1em;
+  font-weight: 600;
+  text-shadow: 0 1px 4px #000;
+  user-select: none;
+  text-align: center; /* Garantir que o texto fique centralizado sob o círculo */
+  max-width: 90px; /* Limitar a largura para evitar sobreposição */
+}
+
+/* Timeline vertical (mobile) */
+@media (max-width: 800px) {
+  .timeline {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    min-height: 400px; /* Aumentado para dar mais espaço vertical no mobile */
+    min-width: 0;
+    height: 100%;
+  }
+
+  .timeline::before {
+    left: 14px;
+    right: auto;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, #a321df 60%, #a321df 100%);
+    transform: none;
+  }
+
+  .timeline-point {
+    flex-direction: row;
+    align-items: center;
+    margin: 1.8em 0; /* Aumentado o espaçamento vertical entre os pontos no mobile */
+    min-width: 0;
+  }
+
+  .timeline-dot {
+    margin-right: 20px; /* Aumentado o espaçamento entre o círculo e a legenda no mobile */
+    margin-bottom: 0; /* Removido o margin-bottom no layout mobile */
+  }
+
+  .timeline-label {
+    margin-top: 0;
+    margin-left: 10px; /* Aumentado o espaçamento à esquerda da legenda no mobile */
+    max-width: 200px; /* Aumentado a largura máxima no mobile */
+  }
+}
+
+/* Ajustes para os círculos no modal de geração */
+.console-thumb {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  width: 120px; /* Aumentado para dar mais espaço */
+  margin-bottom: 1.5em; /* Aumentado o espaçamento inferior */
+  margin-right: 15px; /* Adicionado espaçamento à direita */
+  margin-left: 15px; /* Adicionado espaçamento à esquerda */
+  transition: transform 0.2s;
+}
+
+.console-thumb-img {
+  width: 80px;
+  height: 60px;
+  object-fit: contain;
+  background: #22222200;
+  border-radius: 8px;
+  margin-bottom: 12px; /* Aumentado o espaçamento entre a imagem e o nome */
+  border: 2px solid #a421df44;
+}
+
+.console-thumb-name {
+  font-size: 0.98em;
+  color: #fff;
+  text-align: center;
+  margin-top: 8px; /* Aumentado o espaçamento acima do nome */
+}
+
+/* Timeline base - ajustado para centralizar a linha horizontalmente */
+.timeline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  margin: 2em 0 3em 0;
+  min-height: 100px;
+  width: 100%;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%; /* Centraliza exatamente no meio vertical */
+  height: 4px;
+  background: linear-gradient(90deg, #a321df 60%, #a321df 100%);
+  z-index: 0;
+  transform: translateY(-50%); /* Garante centralização precisa */
+}
+
+.timeline-point {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  min-width: 70px;
+  margin: 0 10px;
+}
+
+.timeline-dot {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #a421df;
+  box-shadow: 0 0 0 0 #a421df88;
+  border: 4px solid #fff;
+  animation: pulse 1.6s infinite alternate;
+  transition: box-shadow 0.3s, background 0.3s;
+  margin-bottom: 15px;
+  position: relative; /* Adicionado para posicionamento preciso */
+  z-index: 2; /* Garante que fique acima da linha */
+}
+
+/* Timeline vertical (mobile) - ajustado para centralizar a linha verticalmente */
+@media (max-width: 800px) {
+  .timeline {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 400px;
+    min-width: 0;
+    height: 100%;
+    position: relative;
+    padding: 0 20px;
+  }
+
+  .timeline::before {
+    left: 50%; /* Posiciona no centro horizontal */
+    right: auto;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    height: 100%;
+    transform: translateX(-50%); /* Centraliza precisamente */
+    background: linear-gradient(180deg, #a321df 60%, #a321df 100%);
+  }
+
+  .timeline-point {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 1.8em 0;
+    min-width: 0;
+    width: 100%;
+    position: relative;
+  }
+
+  .timeline-dot {
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0; /* Garante que não haja deslocamento */
+  }
+
+  .timeline-label {
+    margin-top: 0;
+    margin-left: 0;
+    position: absolute;
+    left: calc(50% + 20px); /* Posiciona a label à direita do ponto com precisão */
+    text-align: left;
+    max-width: 120px;
+    padding-left: 10px;
+  }
+
+  /* Ajuste para alternar a posição das labels */
+  .timeline-point:nth-child(odd) .timeline-label {
+    left: auto;
+    right: calc(50% + 20px); /* Posiciona a label à esquerda do ponto com precisão */
+    text-align: right;
+    padding-left: 0;
+    padding-right: 10px;
+  }
+}
+
+/* Ajuste adicional para telas muito pequenas */
+@media (max-width: 400px) {
+  .timeline-label {
+    font-size: 0.9em;
+    max-width: 100px;
+  }
+}
