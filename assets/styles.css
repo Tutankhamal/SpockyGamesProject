@@ -1987,3 +1987,360 @@ html {
     max-width: 100px;
   }
 }
+
+/* Estilo existente para console-thumb-img */
+.console-thumb-img {
+  width: 80px;
+  height: 60px;
+  object-fit: contain;
+  background: #22222200;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 1;
+  border: none; /* Removemos a borda simples */
+  padding: 3px; /* Espaço para a borda animada */
+  background-clip: padding-box;
+}
+
+/* Adicionando o efeito de borda animada */
+.console-thumb-img::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(90deg, #bf1b3b, #c6c31b, #3bc91c, #1eb5c2, #1e21c2, #8f1dc3);
+  background-size: 300% 100%;
+  animation: rainbow-border-alternate 12s ease-in-out infinite;
+  filter: drop-shadow(0 0 8px #bf1b3b) drop-shadow(0 0 12px #c6c31b) drop-shadow(0 0 16px #1eb5c2);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+/* Estilo existente para console-modal-img */
+.console-modal-img {
+  width: 100%;
+  max-width: 220px;
+  display: block;
+  margin: 0 auto 1em auto;
+  border-radius: 10px;
+  background: #22222200;
+  position: relative;
+  z-index: 1;
+  border: none; /* Removemos a borda simples */
+  padding: 4px; /* Espaço para a borda animada */
+  background-clip: padding-box;
+}
+
+/* Adicionando o efeito de borda animada */
+.console-modal-img::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(90deg, #bf1b3b, #c6c31b, #3bc91c, #1eb5c2, #1e21c2, #8f1dc3);
+  background-size: 300% 100%;
+  animation: rainbow-border-alternate 12s ease-in-out infinite;
+  filter: drop-shadow(0 0 8px #bf1b3b) drop-shadow(0 0 12px #c6c31b) drop-shadow(0 0 16px #1eb5c2);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+/* Ajuste para o hover nas miniaturas */
+.console-thumb:hover .console-thumb-img::before {
+  animation-duration: 6s; /* Animação mais rápida no hover */
+  filter: drop-shadow(0 0 12px #bf1b3b) drop-shadow(0 0 16px #c6c31b) drop-shadow(0 0 20px #1eb5c2);
+}
+
+/* Garantindo que a animação já existe */
+@keyframes rainbow-border-alternate {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Corrigindo o estilo para console-thumb-img */
+.console-thumb-img {
+  width: 80px;
+  height: 60px;
+  object-fit: contain;
+  background: #22222200;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  position: relative;
+  border: 2px solid transparent; /* Mudado para transparent */
+  box-sizing: border-box;
+}
+
+/* Adicionando o efeito de borda animada diretamente na imagem */
+.console-thumb {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  width: 120px;
+  margin-bottom: 1.5em;
+  margin-right: 15px;
+  margin-left: 15px;
+  transition: transform 0.2s;
+}
+
+.console-thumb::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 60px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #bf1b3b, #c6c31b, #3bc91c, #1eb5c2, #1e21c2, #8f1dc3);
+  background-size: 300% 100%;
+  animation: rainbow-border-alternate 12s ease-in-out infinite;
+  
+  z-index: 0;
+}
+
+.console-thumb::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 76px;
+  height: 56px;
+  border-radius: 6px;
+  background: #181828;
+  z-index: 1;
+}
+
+.console-thumb-img {
+  position: relative;
+  z-index: 2;
+}
+
+/* Corrigindo o estilo para console-modal-img */
+.console-modal-img {
+  width: 100%;
+  max-width: 220px;
+  display: block;
+  margin: 0 auto 1em auto;
+  border-radius: 10px;
+  background: #22222200;
+  border: 2px solid transparent;
+  position: relative;
+  z-index: 2;
+  box-sizing: border-box;
+}
+
+/* Adicionando o container para a imagem do modal */
+.console-modal-img-container {
+  position: relative;
+  width: 100%;
+  max-width: 220px;
+  margin: 0 auto 1em auto;
+}
+
+.console-modal-img-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #bf1b3b, #c6c31b, #3bc91c, #1eb5c2, #1e21c2, #8f1dc3);
+  background-size: 300% 100%;
+  animation: rainbow-border-alternate 12s ease-in-out infinite;
+  
+  z-index: 0;
+}
+
+.console-modal-img-container::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: calc(100% - 8px);
+  height: calc(100% - 8px);
+  border-radius: 8px;
+  background: #181828;
+  z-index: 1;
+}
+
+/* Corrigindo o estilo para console-thumb-img */
+.console-thumb-img {
+  width: 80px;
+  height: 60px;
+  object-fit: contain;
+  background: #22222200;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  position: relative;
+  border: 2px solid transparent; /* Mudado para transparent */
+  box-sizing: border-box;
+}
+
+/* Adicionando o efeito de borda animada diretamente na imagem */
+.console-thumb {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  width: 120px;
+  margin-bottom: 1.5em;
+  margin-right: 15px;
+  margin-left: 15px;
+  transition: transform 0.2s;
+}
+
+.console-thumb::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 60px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #bf1b3b, #c6c31b, #3bc91c, #1eb5c2, #1e21c2, #8f1dc3);
+  background-size: 300% 100%;
+  animation: rainbow-border-alternate 12s ease-in-out infinite;
+  
+  z-index: 0;
+}
+
+.console-thumb::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 76px;
+  height: 56px;
+  border-radius: 6px;
+  background: #181828;
+  z-index: 1;
+}
+
+.console-thumb-img {
+  position: relative;
+  z-index: 2;
+}
+
+/* Corrigindo o estilo para console-modal-img */
+.console-modal-img {
+  width: 100%;
+  max-width: 220px;
+  display: block;
+  margin: 0 auto 1em auto;
+  border-radius: 10px;
+  background: #22222200;
+  border: 2px solid transparent;
+  position: relative;
+  z-index: 2;
+  box-sizing: border-box;
+}
+
+/* Adicionando o container para a imagem do modal */
+.console-modal-img-container {
+  position: relative;
+  width: 100%;
+  max-width: 220px;
+  margin: 0 auto 1em auto;
+}
+
+.console-modal-img-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #bf1b3b, #c6c31b, #3bc91c, #1eb5c2, #1e21c2, #8f1dc3);
+  background-size: 300% 100%;
+  animation: rainbow-border-alternate 12s ease-in-out infinite;
+ 
+  z-index: 0;
+}
+
+.console-modal-img-container::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: calc(100% - 8px);
+  height: calc(100% - 8px);
+  border-radius: 8px;
+  background: #181828;
+  z-index: 1;
+}
+
+/* Ajuste para centralizar o conteúdo do modal em todas as telas */
+.modal-content {
+  margin-top: 1em;
+  text-align: center; /* Centraliza todo o conteúdo do modal */
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Centraliza a tabela de especificações */
+.console-modal-table {
+  width: 100%;
+  margin: 1em auto; /* Centraliza a tabela */
+  border-collapse: collapse;
+  font-size: 0.98em;
+  max-width: 450px; /* Limita a largura máxima da tabela */
+}
+
+.console-modal-table th,
+.console-modal-table td {
+  padding: 0.3em 0.7em;
+  border-bottom: 1px solid #ba1ce2;
+  text-align: left;
+}
+
+/* Centraliza o título do console */
+.console-modal-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  color: #a421df;
+  text-align: center;
+}
+
+/* Centraliza as curiosidades */
+.console-modal-curiosities {
+  margin-top: 0.7em;
+  color: #fff;
+  font-size: 1em;
+  text-align: center; /* Centraliza o texto */
+  max-width: 500px; /* Limita a largura máxima */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Ajusta o alinhamento do texto das curiosidades */
+.console-modal-curiosities div {
+  text-align: left; /* Mantém o texto das curiosidades alinhado à esquerda */
+  display: inline-block; /* Permite que o bloco seja centralizado */
+  max-width: 100%;
+}

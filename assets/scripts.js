@@ -513,22 +513,26 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // Modal do console
-  function showConsoleModal(consoleData) {
-    const modalBg = document.getElementById('console-modal-bg');
-    const modalContent = document.getElementById('console-modal-content');
-    modalContent.innerHTML = `
+// Modificando a função showConsoleModal para adicionar o container da imagem
+function showConsoleModal(consoleData) {
+  const modalBg = document.getElementById("console-modal-bg")
+  const modalContent = document.getElementById("console-modal-content")
+  modalContent.innerHTML = `
+    <div class="console-modal-img-container">
       <img src="${consoleData.img}" alt="${consoleData.name}" class="console-modal-img">
-      <div class="console-modal-title">${consoleData.name}</div>
-      <table class="console-modal-table">
-        ${consoleData.ficha.map(f => `<tr><th>${f[0]}</th><td>${f[1]}</td></tr>`).join('')}
-      </table>
-      <div class="console-modal-curiosities">
-        <b>Curiosidades:</b><br>
-        ${consoleData.curiosidades.map(c => `<div>• ${c}</div>`).join('')}
-      </div>
-    `;
-    modalBg.classList.add('active');
-  }
+    </div>
+    <div class="console-modal-title">${consoleData.name}</div>
+    <table class="console-modal-table">
+      ${consoleData.ficha.map((f) => `<tr><th>${f[0]}</th><td>${f[1]}</td></tr>`).join("")}
+    </table>
+    <div class="console-modal-curiosities">
+      <b>Curiosidades:</b><br>
+      ${consoleData.curiosidades.map((c) => `<div>• ${c}</div>`).join("")}
+    </div>
+  `
+  modalBg.classList.add("active")
+}
+
 
   // Fechar modais ao clicar no X ou fora
   ['gen', 'console'].forEach(type => {
