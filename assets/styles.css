@@ -1353,7 +1353,7 @@ html {
   position: fixed;
   z-index: 9999;
   left: 0; top: 0; width: 100vw; height: 100vh;
-  background: rgba(0,0,0,0.75);
+  background: rgba(0, 0, 0, 0);
   align-items: center;
   justify-content: center;
 }
@@ -1366,7 +1366,7 @@ html {
     top: 0; 
     width: 100vw; 
     height: 100vh;
-    background: rgba(0, 0, 0, 0.75);
+    background: rgba(0, 0, 0, 0);
     display: flex; /* Mantenha o display como flex */
     align-items: center; /* Centraliza verticalmente */
     justify-content: center; /* Centraliza horizontalmente */
@@ -1387,7 +1387,7 @@ html {
   color: #fff;
   font-size: 2em;
   cursor: pointer;
-  z-index: 2;
+  z-index: 1;
   transition: color 0.2s;
 }
 .modal-close:hover { color: #a421df; }
@@ -1398,7 +1398,7 @@ html {
   font-size: 1.5em;
   font-weight: bold;
   margin-bottom: 0.5em;
-  color: #a421df;
+  color: #ffffff;
 }
 .generation-period {
   font-size: 1em;
@@ -1640,13 +1640,13 @@ html {
   position: fixed;
   z-index: 9999;
   left: 0; top: 0; width: 100vw; height: 100vh;
-  background: rgba(0,0,0,0.75);
+  background: rgba(0, 0, 0, 0);
   align-items: center;
   justify-content: center;
 }
 .modal-bg.active { display: flex; }
 .modal {
-  background: #181828;
+  background: #18182800;
   color: #fff;
   border-radius: 16px;
   max-width: 600px;
@@ -1704,7 +1704,7 @@ html {
     color: white; /* Cor do texto dos círculos */
 }
 .modal {
-  background: #0000009d;
+  background: #000000fd;
   color: #fff;
   border-radius: 16px;
   max-width: 600px;
@@ -1717,13 +1717,15 @@ html {
   animation: modalIn 0.3s;
   margin: 0 auto; /* Adiciona margem automática para centralizar */
   align-items: center;
+  border: 2px solid #ba1ce269;
 }
 .modal-content {
-    background-color: #0000009d;
+    background-color: #00000064;
+    position: relative;
     margin: 15px; /* Margem para dispositivos móveis */
     padding: 20px;
-    border: 3px solid #ba1ce2;
-    width: 90%; /* Largura responsiva */
+    border: 3px solid #ba1ce254;
+    width: 95%; /* Largura responsiva */
     max-width: 600px; /* Largura máxima */
     color: white;
     border-radius: 8px; /* Bordas arredondadas */
@@ -2336,7 +2338,7 @@ html {
   font-size: 1.2em;
   font-weight: bold;
   margin-bottom: 0.5em;
-  color: #a421df;
+  color: #ffffff;
   text-align: center;
 }
 
@@ -2349,11 +2351,34 @@ html {
   max-width: 500px; /* Limita a largura máxima */
   margin-left: auto;
   margin-right: auto;
+  overflow-wrap: break-word;
 }
 
 /* Ajusta o alinhamento do texto das curiosidades */
 .console-modal-curiosities div {
   text-align: left; /* Mantém o texto das curiosidades alinhado à esquerda */
-  display: inline-block; /* Permite que o bloco seja centralizado */
+  display: flex;
+  flex-wrap: wrap; /* Permite que o bloco seja centralizado */
   max-width: 100%;
 }
+
+.console-modal-curiosities div::before {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: #FF69B4;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.modal {
+  max-height: 80vh; /* Reduz a altura máxima da modal */
+  padding: 1em 1.5em 1.5em 1.5em; /* Ajusta o espaçamento interno */
+}
+
+.modal-close {
+  top: 10px; /* Move o botão de fechar para mais perto do topo */
+  right: 10px; /* Move o botão de fechar para mais perto da direita */
+}
+
+
