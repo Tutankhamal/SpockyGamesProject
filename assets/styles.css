@@ -32,7 +32,7 @@ nav {
   align-items: center;
   justify-content: flex-start;
   padding: 0 3em;
-  background-color: rgba(14, 14, 14, 0.81);
+  background-color: rgba(0, 0, 0, 0.81);
   width: 100%;
   max-width: none;
   margin: 0;
@@ -181,7 +181,7 @@ nav ul li a,
     display: none;
     flex-direction: column;
     align-items: flex-start;
-    background: rgba(14, 14, 14, 0.97);
+    background: rgba(0, 0, 0, 0.97);
     position: absolute;
     top: 60px;
     left: 0;
@@ -323,7 +323,7 @@ nav ul li a,
 
 /* Footer */
 footer {
-  background-color: rgba(14, 14, 14, 0.81);
+  background-color: rgba(0, 0, 0, 0.81);
   text-align: center;
   padding: 1em;
   width: 100%;
@@ -1005,7 +1005,7 @@ html {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: #181818;
+    background: #000000ea;
     position: absolute;
     top: 60px;
     left: 0;
@@ -1016,6 +1016,7 @@ html {
     z-index: 100;
     padding: 1em 0;
     margin: 0;
+    border: 2px solid #0f0f0f;
   }
   nav ul.open {
     display: flex;
