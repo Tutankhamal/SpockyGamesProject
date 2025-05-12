@@ -1718,14 +1718,14 @@ html {
   animation: modalIn 0.3s;
   margin: 0 auto; /* Adiciona margem automática para centralizar */
   align-items: center;
-  border: 2px solid #ba1ce269;
+  border: 4px solid #ba1ce269;
 }
 .modal-content {
     background-color: #00000064;
     position: relative;
     margin: 15px; /* Margem para dispositivos móveis */
     padding: 20px;
-    border: 3px solid #ba1ce254;
+    border: 4px solid #ba1ce2bc;
     width: 95%; /* Largura responsiva */
     max-width: 600px; /* Largura máxima */
     color: white;
@@ -2009,7 +2009,7 @@ html {
   width: 80px;
   height: 60px;
   object-fit: contain;
-  background: #22222200;
+  background: #00000000;
   border-radius: 8px;
   margin-bottom: 12px;
   position: relative;
@@ -2027,7 +2027,7 @@ html {
   z-index: -1;
   border-radius: inherit;
   padding: 2px;
-  background: linear-gradient(90deg, #bf1b3b, #c6c31b, #3bc91c, #1eb5c2, #1e21c2, #8f1dc3);
+  background: linear-gradient(90deg, #1e21c2, #8f1dc3, #1e21c2, #8f1dc3, #1e21c2, #8f1dc3);
   background-size: 300% 100%;
   animation: rainbow-border-alternate 12s ease-in-out infinite;
   filter: drop-shadow(0 0 8px #bf1b3b) drop-shadow(0 0 12px #c6c31b) drop-shadow(0 0 16px #1eb5c2);
@@ -2060,7 +2060,7 @@ html {
   z-index: -1;
   border-radius: inherit;
   padding: 2px;
-  background: linear-gradient(90deg, #bf1b3b, #c6c31b, #3bc91c, #1eb5c2, #1e21c2, #8f1dc3);
+   background: linear-gradient(90deg, #1e21c2, #8f1dc3, #1e21c2, #8f1dc3, #1e21c2, #8f1dc3);
   background-size: 300% 100%;
   animation: rainbow-border-alternate 12s ease-in-out infinite;
   filter: drop-shadow(0 0 8px #bf1b3b) drop-shadow(0 0 12px #c6c31b) drop-shadow(0 0 16px #1eb5c2);
@@ -2125,7 +2125,7 @@ html {
   width: 80px;
   height: 60px;
   border-radius: 8px;
-  background: linear-gradient(90deg, #bf1b3b, #c6c31b, #3bc91c, #1eb5c2, #1e21c2, #8f1dc3);
+  background: linear-gradient(90deg, #1e21c2, #8f1dc3, #1e21c2, #8f1dc3, #1e21c2, #8f1dc3);
   background-size: 300% 100%;
   animation: rainbow-border-alternate 12s ease-in-out infinite;
   
@@ -2180,7 +2180,7 @@ html {
   width: 100%;
   height: 100%;
   border-radius: 10px;
-  background: linear-gradient(90deg, #bf1b3b, #c6c31b, #3bc91c, #1eb5c2, #1e21c2, #8f1dc3);
+  background: linear-gradient(90deg, #1e21c2, #8f1dc3, #1e21c2, #8f1dc3, #1e21c2, #8f1dc3);
   background-size: 300% 100%;
   animation: rainbow-border-alternate 12s ease-in-out infinite;
   
@@ -2235,7 +2235,7 @@ html {
   width: 80px;
   height: 60px;
   border-radius: 8px;
-  background: linear-gradient(90deg, #bf1b3b, #c6c31b, #3bc91c, #1eb5c2, #1e21c2, #8f1dc3);
+  background: linear-gradient(90deg, #1e21c2, #8f1dc3, #1e21c2, #8f1dc3, #1e21c2, #8f1dc3);
   background-size: 300% 100%;
   animation: rainbow-border-alternate 12s ease-in-out infinite;
   
@@ -2251,7 +2251,7 @@ html {
   width: 76px;
   height: 56px;
   border-radius: 6px;
-  background: #181828;
+  background: #000000;
   z-index: 1;
 }
 
@@ -2267,7 +2267,7 @@ html {
   display: block;
   margin: 0 auto 1em auto;
   border-radius: 10px;
-  background: #22222200;
+  background: #00000000;
   border: 2px solid transparent;
   position: relative;
   z-index: 2;
@@ -2290,7 +2290,7 @@ html {
   width: 100%;
   height: 100%;
   border-radius: 10px;
-  background: linear-gradient(90deg, #bf1b3b, #c6c31b, #3bc91c, #1eb5c2, #1e21c2, #8f1dc3);
+  background: linear-gradient(90deg, #1e21c2, #8f1dc3, #1e21c2, #8f1dc3, #1e21c2, #8f1dc3);
   background-size: 300% 100%;
   animation: rainbow-border-alternate 12s ease-in-out infinite;
  
@@ -2305,7 +2305,7 @@ html {
   width: calc(100% - 8px);
   height: calc(100% - 8px);
   border-radius: 8px;
-  background: #181828;
+  background: #000000;
   z-index: 1;
 }
 
